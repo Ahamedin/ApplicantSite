@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const BASE_URL =  "http://localhost:3000";
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "";
 
 export const useBlockStore = create((set,get) => ({
     blocks:[],
@@ -87,7 +87,7 @@ export const useBlockStore = create((set,get) => ({
     fetchBlock: async(id) =>{
         set({loading:true});
         try {
-            const response = await axios.get(`${BASE_URL}/api/blocks/${id}`);
+            const response = await axios.get(`${BASE_URL}/api/blocks/modals/${id}`);
             set({currentProduct:response.data.data,error:null})
             set({recommendedProduct:response.data.recommendedProduct,error:null})
         } catch (error) {
@@ -102,7 +102,7 @@ export const useBlockStore = create((set,get) => ({
     deleteBlock: async(id) =>{
         set({loading:true});
         try {
-            await axios.delete(`${BASE_URL}/api/blocks/${id}`);
+            await axios.delete(`${BASE_URL}/api/blocks/modals/${id}`);
             set(prev => ({blocks: prev.blocks.filter(block => block.id !== id)}));
             toast.success("Block deleted successfully");
         } catch (error) {

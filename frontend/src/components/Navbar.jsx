@@ -45,9 +45,9 @@ function Navbar() {
 
           <div className=" gap-4">
             <div className='mr-80'>
-              <a href="/" className='mr-4'>Home</a>
-              <a href="/modals" className=''>Modal</a>
-              <a href="/aboutuspage" className='ml-4 -mr-5'>About</a>
+              <a href="/" className='mr-4 font-serif'>Home</a>
+              <a href="/modals" className='font-serif'>Modal</a>
+              <a href="/aboutuspage" className='ml-4 -mr-5 font-serif'>About</a>
             </div>
             
             <a href="/contactpage"><MapPinHouse className='size-5 btn btn-ghost btn-square'/></a>
