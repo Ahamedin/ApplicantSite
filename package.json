@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon backend/server.js"
+    
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "lucide-react": "^0.511.0",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
+    "path-to-regexp": "^6.2.1",
     "prisma": "^6.8.1"
   },
   "devDependencies": {
