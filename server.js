@@ -1,0 +1,53 @@
+import express from 'express';
+import dotenv from "dotenv";
+import cors from "cors";
+import session from "express-session";
+
+import passport from "passport";
+import './backend/config/passport.js';  // ✅ updated path
+import auth from "./backend/routes/auth.js"; // ✅ updated path
+import productRoutes from "./backend/routes/productRoutes.js"; // ✅ updated path
+import rateLimiter from "./backend/lib/ratelimit.js"; // ✅ updated path
+
+import path from "path";
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const __dirname = path.resolve();
+
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(express.json());
+app.use(rateLimiter);
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || "TOPSECRETWORD",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24,
+    secure: false,
+    httpOnly: true,
+    sameSite: 'lax',
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use("/api/blocks", productRoutes);
+app.use("/auth", auth);
+
+// Static frontend handling
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(path.join(__dirname, "frontend", "dist", "index.html")));
+  });
+}
+
+app.listen(PORT, () => {
+  console.log(`server running on ${PORT}`);
+});
