@@ -4,11 +4,11 @@ import cors from "cors";
 import session from "express-session";
 
 import passport from "passport";
-import './config/passport.js';
-import auth from "./routes/auth.js"
+import './backend/config/passport.js';
+import auth from "./backend/routes/auth.js"
 
-import productRoutes from "./routes/productRoutes.js";
-import rateLimiter from "./lib/ratelimit.js";
+import productRoutes from "./backend/routes/productRoutes.js";
+import rateLimiter from "./backend/lib/ratelimit.js";
 import path from "path";
 
 
@@ -42,7 +42,7 @@ if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
   app.get("*", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(path.join(__dirname, "frontend", "dist", "index.html")));
   })
 }
 
