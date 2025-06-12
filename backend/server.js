@@ -4,11 +4,11 @@ import cors from "cors";
 import session from "express-session";
 
 import passport from "passport";
-import './backend/config/passport.js';
-import auth from "./backend/routes/auth.js"
+import './config/passport.js';
+import auth from "./routes/auth.js"
 
-import productRoutes from "./backend/routes/productRoutes.js";
-import rateLimiter from "./backend/lib/ratelimit.js";
+import productRoutes from "./routes/productRoutes.js";
+import rateLimiter from "./lib/ratelimit.js";
 import path from "path";
 
 
