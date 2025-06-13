@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
 import session from "express-session";
-
+// import router from './routes';
 import passport from "passport";
 import './config/passport.js';
 import auth from "./routes/auth.js"
