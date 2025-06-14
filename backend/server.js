@@ -1,4 +1,4 @@
-import express from 'express';
+var express = require('express');
 import dotenv from "dotenv";
 import cors from "cors";
 import session from "express-session";
