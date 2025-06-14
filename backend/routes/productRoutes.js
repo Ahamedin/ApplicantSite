@@ -1,7 +1,7 @@
-import express from "express"
+import { Router } from "express"
 import { getAllblocks,getblock,createBooking, deleteBlock, createBlock, saveblock, getSavedBlocks, getSaveOneBlock, deleteSavedBlock, getBookDetails, searchBlocks } from "../controllers/productController.js";
 
-const router = express.Router();
+const router = Router();
 
 router.get("/modals", getAllblocks);
 router.get("/booking",getBookDetails);
