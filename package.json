@@ -30,7 +30,8 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "path-to-regexp": "^6.2.1",
-    "prisma": "^6.8.1"
+    "prisma": "^6.8.1",
+    "routes": "^2.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
