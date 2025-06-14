@@ -1,4 +1,4 @@
-var express = require('express');
+import express from 'express';
 import passport from 'passport';``
 
 const router = express.Router();

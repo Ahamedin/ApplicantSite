@@ -1,4 +1,4 @@
-var express = require('express');
+import express from "express"
 import { getAllblocks,getblock,createBooking, deleteBlock, createBlock, saveblock, getSavedBlocks, getSaveOneBlock, deleteSavedBlock, getBookDetails, searchBlocks } from "../controllers/productController.js";
 
 const router = express.Router();
