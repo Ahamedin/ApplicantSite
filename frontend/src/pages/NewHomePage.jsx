@@ -47,8 +47,8 @@ function NewHomePage() {
                 
 
                 <div >
-                <h1 className="mt-24 text-4xl font-serif text-black-900 sm:text-4xl xl:text-6xl xl:leading-tight ">Block Store</h1>
-                <p className="mt-8 text-2xl text-left font-serif leading-7 text-black-400 lg:max-w-full xl:pr-0 lg:pr-16">Designed to captivate the eyes and calm the soul, our wallpapers blend beauty and tranquility in every space.</p>
+                <h1 className="mt-24 text-4xl font-serif sm:text-4xl xl:text-6xl xl:leading-tight ">Block Store</h1>
+                <p className="mt-8 text-2xl text-left font-serif leading-7 lg:max-w-full xl:pr-0 lg:pr-16">Designed to captivate the eyes and calm the soul, our wallpapers blend beauty and tranquility in every space.</p>
                 </div>
             </div>
         </div>
