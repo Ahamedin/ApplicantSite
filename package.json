@@ -14,10 +14,10 @@
   "license": "ISC",
   "type": "module",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "dependencies": {
-    "@prisma/client": "^6.8.1",
+    "@prisma/client": "^6.13.0",
     "bcrypt": "^6.0.0",
     "bottleneck": "^2.19.5",
     "cors": "^2.8.5",
@@ -30,8 +30,7 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "path-to-regexp": "^6.2.1",
-    "prisma": "^6.8.1",
-    "routes": "^2.1.0"
+    "prisma": "^6.13.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

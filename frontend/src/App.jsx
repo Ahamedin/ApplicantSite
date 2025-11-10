@@ -15,21 +15,28 @@ import BookingPage from "./pages/BookingPage.jsx"
 function App() {
   const {theme} = useThemeStore()
   return (
-    <div className="min-h-screen bg-base-200 transition-colors duration-300" data-theme={theme}>
-      
+    <div
+      className="min-h-screen bg-base-200 transition-colors duration-300 flex flex-col"
+      data-theme={theme}
+    >
+      {/* NAVBAR fixed */}
       <Navbar />
 
-      <Routes>
-        <Route path="/modals" element={<HomePage/>} />
-        <Route path="/blocks/:id" element={<BlockPage/>} />
-        <Route path="/bookings" element={<Contact/>} />
-        <Route path="/contactpage" element={<ContactPage/>} />
-        <Route path="/aboutuspage" element={<AboutUsPage/>} />
-        <Route path="/" element={<NewHomePage/>} />
-        <Route path="/savedpage" element={<CartPage/>} />
-        <Route path="/savedpage/:id" element={<BlockPageForCart/>}/>
-        <Route path="/bookpage" element={<BookingPage/>} />
-      </Routes>
+      {/* MAIN PAGE CONTENT AREA */}
+      <div className="flex-1 w-full mx-auto px-3 sm:px-6 lg:px-10 py-4">
+        <Routes>
+          <Route path="/modals" element={<HomePage/>} />
+          <Route path="/blocks/:id" element={<BlockPage/>} />
+          <Route path="/bookings" element={<Contact/>} />  {/* you KEEP this */}
+          <Route path="/contactpage" element={<ContactPage/>} />
+          <Route path="/aboutuspage" element={<AboutUsPage/>} />
+          <Route path="/" element={<NewHomePage/>} />
+          <Route path="/savedpage" element={<CartPage/>} />
+          <Route path="/savedpage/:id" element={<BlockPageForCart/>}/>
+          <Route path="/bookpage" element={<BookingPage/>} />
+        </Routes>
+      </div>
+
       <Toaster />
     </div>
   )

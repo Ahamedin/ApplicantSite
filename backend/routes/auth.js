@@ -24,7 +24,7 @@ router.get('/google/callback',
 router.get('/logout', (req, res, next) => {
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('http://localhost:5173/');  // Redirect to frontend home
+    res.redirect('http://localhost:3000/');  // Redirect to frontend home
   });
 });
 
