@@ -1,4 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+// backend/utilities/connectpsql.js
+import pkg from '@prisma/client';
+const { PrismaClient } = pkg;
 
 const prisma = new PrismaClient();
 
